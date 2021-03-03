@@ -28,7 +28,7 @@ const Home = () => {
       <label>Filter by user: </label>
       <input className="SearchPost" type="text" value={searchString} onChange={handleChange} />
       {filteredPosts.map((post) => {
-        return (<DetailedPost post={post} onPostClick={handlePostClick}/>)
+        return (<DetailedPost key={post.id} post={post} onPostClick={handlePostClick}/>)
       })}
     </div>
   );
