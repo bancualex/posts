@@ -15,13 +15,16 @@ const Home = () => {
 
   React.useEffect(() => {
     console.log(defaultComponentMessage, " App/Home component");
+
+    postState.loadAllPosts();
   }, []);
 
   const handleChange = (event) => {
     setSearchString(event.target.value);
   };
 
-  const filteredPosts = postState.posts.filter((post) => post.username.includes(searchString));
+  console.log('postState', postState.posts);
+  const filteredPosts = postState.posts.filter((post) => post.userId.toString().includes(searchString));
 
   return (
     <div className="Home" data-testid="Home">

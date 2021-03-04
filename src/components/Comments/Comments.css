@@ -1,0 +1,13 @@
+.Comments {}
+
+.Comment {
+    border: 1px solid black;
+    margin: 20px 50px; 
+    padding: 20px 20px;
+
+
+    align-items: flex-start;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+}

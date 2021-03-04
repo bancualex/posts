@@ -1,15 +1,17 @@
 import React from 'react';
 import './DetailedPost.css';
 
-const DetailedPost = ({post: {id, username, description, comments}, onPostClick = () => {}}) => (
+const DetailedPost = ({post: {userId, id, title, body, comments}, onPostClick = () => {}}) => (
   <div className="DetailedPost" data-testid="DetailedPost" onClick={((e) => onPostClick(e, id))}>
-    <div>{username}: </div>
-    <div>{description}</div>
+    <div>{"User"+userId}: </div>
+    <div>{title}: </div>
+    <br/>
+    <div>{body}</div>
     <br/>
     <div>Comments:</div>
-    {comments.map(comment => {
+    {/* {comments.map(comment => {
       return (<div key={comment.username+comment.text}>{comment.username}: {comment.text}</div>)
-    })}
+    })} */}
   </div>
 )
 
